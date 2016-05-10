@@ -19,6 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import com.iptv.DBActivity.DBActivityDAO;
+
 public class Main {
 
 	static Integer frameType = 1;
@@ -42,6 +44,8 @@ public class Main {
 		mainFrame.setVisible(true);		
 		MainPanel.getMainPanel().dropDown.requestFocus();
 		MainPanel.getMainPanel().dropDown.setBackground(Color.orange);
+		
+		DBActivityDAO.getinstance().createDatabaseConnection();
 	}
 
 }
