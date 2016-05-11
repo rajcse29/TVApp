@@ -44,8 +44,14 @@ public class Main {
 		mainFrame.setVisible(true);		
 		MainPanel.getMainPanel().dropDown.requestFocus();
 		MainPanel.getMainPanel().dropDown.setBackground(Color.orange);
-		
-		DBActivityDAO.getinstance().createDatabaseConnection();
+		System.out.println("database started");
+		 if (DBActivityDAO.conn == null) {
+			 DBActivityDAO.getinstance().createDatabaseConnection();
+				DBActivityDAO.getinstance().createCountryTable();
+				DBActivityDAO.getinstance().createCategoryTable();
+				DBActivityDAO.getinstance().createLanguageTable();
+		 }
+		System.out.println("database over");
 	}
 
 }
